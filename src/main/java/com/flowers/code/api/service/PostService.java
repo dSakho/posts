@@ -3,6 +3,7 @@ package com.flowers.code.api.service;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,7 @@ public class PostService {
     private final PostRepository postRepository;
     private final PostValidator postValidator;
 
-
+    @Autowired
     public PostService(final PostRepository postRepository, final PostValidator postValidator) {
 	this.postRepository = postRepository;
 	this.postValidator = postValidator;

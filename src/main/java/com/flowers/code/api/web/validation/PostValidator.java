@@ -7,16 +7,16 @@ import com.flowers.code.api.web.view.PostPayload;
 
 public class PostValidator {
 
-    public boolean isPostValid(final PostPayload post) {
-	if (isNull(post.getUserId())) {
+    public boolean isPostValid(final PostPayload payload) {
+	if (isNull(payload.getUserId())) {
 	    return false;
 	}
 
-	if (isEmpty(post.getTitle())) {
+	if (isEmpty(payload.getTitle())) {
 	    return false;
 	}
 
-	if (isEmpty(post.getBody())) {
+	if (isEmpty(payload.getBody())) {
 	    return false;
 	}
 

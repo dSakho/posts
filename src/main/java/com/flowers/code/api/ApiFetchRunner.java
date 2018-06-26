@@ -24,7 +24,7 @@ public class ApiFetchRunner implements ApplicationRunner {
     @Autowired
     private PostRepository postRepository;
 
-    @Value("{api.url}")
+    @Value("${api.url}")
     private String apiUrl;
 
     @Override
@@ -37,6 +37,8 @@ public class ApiFetchRunner implements ApplicationRunner {
 
 	if (postList.getBody() != null) {
 	    Arrays.stream(postList.getBody()).forEach(postRepository::savePost);
+
+	    LOGGER.info("Repository intialized & data successfully loaded.");
 	}
     }
 }
